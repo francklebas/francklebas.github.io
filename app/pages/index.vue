@@ -13,6 +13,8 @@ onMounted(() => {
 })
 
 const featuredProjects = computed(() => content.value.projects.slice(0, 3))
+const approachIntro = computed(() => content.value.home.approachIntro || [])
+const approachBullets = computed(() => content.value.home.approachBullets || content.value.about.philosophy)
 
 const metrics = computed(() =>
   content.value.home.metrics.map((metric) => {
@@ -82,17 +84,23 @@ useSeoMeta({
     </div>
 
     <div class="section reveal-init" style="--reveal-delay: 220ms">
-      <h2>{{ t('ui.myApproach') }}</h2>
-      <div class="grid cols-2">
-        <article
-          v-for="item in content.about.philosophy"
-          :key="item.en"
-          class="card bg-base-100 border border-base-content/15 hover-lift"
-        >
-          <div class="card-body p-5">
-            <p>{{ item[locale as 'en' | 'fr' | 'sv'] }}</p>
-          </div>
-        </article>
+      <h2>{{ content.home.approachTitle?.[locale as 'en' | 'fr' | 'sv'] || t('ui.myApproach') }}</h2>
+      <div class="card bg-base-100 border border-base-content/15">
+        <div class="card-body p-5">
+          <p v-for="paragraph in approachIntro" :key="paragraph.en">{{ paragraph[locale as 'en' | 'fr' | 'sv'] }}</p>
+          <ul class="approach-list">
+            <li v-for="item in approachBullets" :key="item.en">{{ item[locale as 'en' | 'fr' | 'sv'] }}</li>
+          </ul>
+          <p class="muted">
+            {{
+              locale === 'fr'
+                ? 'Une architecture frontend reussie est invisible quand elle fonctionne, et evidente quand elle echoue.'
+                : locale === 'sv'
+                  ? 'Bra frontend-arkitektur ar osynlig nar den fungerar, och uppenbar nar den inte gor det.'
+                  : 'Great frontend architecture is invisible when it works, and obvious when it does not.'
+            }}
+          </p>
+        </div>
       </div>
     </div>
 
@@ -146,6 +154,7 @@ useSeoMeta({
           </figure>
           <div class="card-body p-5">
             <h3 class="text-secondary">{{ project.name }}</h3>
+            <p v-if="project.role" class="badge badge-ghost badge-sm w-fit">{{ project.role[locale as 'en' | 'fr' | 'sv'] }}</p>
             <p>{{ project.useCase[locale as 'en' | 'fr' | 'sv'] }}</p>
             <p class="muted">{{ project.impact[locale as 'en' | 'fr' | 'sv'] }}</p>
             <div class="flex flex-wrap gap-2 mt-2">

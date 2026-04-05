@@ -197,6 +197,15 @@ h2 {
   color: color-mix(in oklab, var(--color-base-content) 68%, transparent);
 }
 
+.approach-list {
+  margin: 0.25rem 0;
+  padding-left: 1.1rem;
+}
+
+.approach-list li {
+  margin: 0.32rem 0;
+}
+
 .metric-card {
   display: flex;
   align-items: center;

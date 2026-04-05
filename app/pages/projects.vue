@@ -40,6 +40,7 @@ useSeoMeta({
         </figure>
         <div class="card-body p-5">
           <h2 class="text-secondary">{{ project.name }}</h2>
+          <p v-if="project.role" class="badge badge-ghost badge-sm w-fit">{{ project.role[locale as 'en' | 'fr' | 'sv'] }}</p>
           <p>{{ project.useCase[locale as 'en' | 'fr' | 'sv'] }}</p>
           <p class="muted">{{ project.impact[locale as 'en' | 'fr' | 'sv'] }}</p>
 

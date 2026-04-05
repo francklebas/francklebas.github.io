@@ -28,6 +28,7 @@ export interface ProjectItem {
   repoUrl: string
   demoUrl?: string
   previewImage?: string
+  role?: LocalizedText
   stack: string[]
   useCase: LocalizedText
   impact: LocalizedText
@@ -57,6 +58,9 @@ export interface HomeContent {
   hero: HeroContent
   highlightsTitle: LocalizedText
   highlights: LocalizedText[]
+  approachTitle?: LocalizedText
+  approachIntro?: LocalizedText[]
+  approachBullets?: LocalizedText[]
   metricsTitle: LocalizedText
   metrics: Metric[]
 }

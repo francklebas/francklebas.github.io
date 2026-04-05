@@ -47,6 +47,40 @@ export const fallbackContent: SiteContent = {
         sv: 'Mentorskap, code review-kultur och arkitekturstandarder som skalar.'
       }
     ],
+    approachTitle: {
+      en: 'My Approach',
+      fr: 'Mon approche',
+      sv: 'Mitt arbetssatt'
+    },
+    approachIntro: [
+      {
+        en: 'I design frontend systems that are fast, scalable, and maintainable without sacrificing user experience.',
+        fr: 'Je concois des systemes frontend rapides, scalables et maintenables, sans sacrifier l experience utilisateur.',
+        sv: 'Jag designar frontend-system som ar snabba, skalbara och hallbara utan att tumma pa anvandarupplevelsen.'
+      },
+      {
+        en: 'Trained as a designer, I approach architecture through composable APIs, token-based design systems, and performance-by-default strategies.',
+        fr: 'Forme au design, j aborde l architecture via des APIs composables, des design systems a base de tokens et une approche performance by default.',
+        sv: 'Med designbakgrund angriper jag arkitektur genom komponerbara API:er, token-baserade designsystem och performance-by-default.'
+      }
+    ],
+    approachBullets: [
+      {
+        en: 'Build clean abstractions that scale with the product.',
+        fr: 'Construire des abstractions claires qui evoluent avec le produit.',
+        sv: 'Bygga rena abstraktioner som skalar med produkten.'
+      },
+      {
+        en: 'Deliver measurable gains in speed and developer experience.',
+        fr: 'Livrer des gains mesurables en performance et experience developpeur.',
+        sv: 'Leverera matbara vinster i prestanda och utvecklarupplevelse.'
+      },
+      {
+        en: 'Craft interfaces that still feel intentional under delivery pressure.',
+        fr: 'Concevoir des interfaces soignees meme sous pression de livraison.',
+        sv: 'Skapa genomtankta grannssnitt aven under hog leveranspress.'
+      }
+    ],
     metricsTitle: {
       en: 'Impact at a glance',
       fr: 'Impact en bref',
@@ -213,6 +247,11 @@ export const fallbackContent: SiteContent = {
       name: 'NextSwift Pro - SaaS Boilerplate',
       repoUrl: 'https://github.com/francklebas/next-swift',
       previewImage: '/projects/next-swift.png',
+      role: {
+        en: 'Lead Developer & Architect',
+        fr: 'Lead Developer & Architect',
+        sv: 'Lead Developer & Architect'
+      },
       stack: [
         'Next.js 15 App Router',
         'TypeScript',
@@ -222,46 +261,56 @@ export const fallbackContent: SiteContent = {
         'Sold on Gumroad'
       ],
       useCase: {
-        en: 'Commercial SaaS starter kit built with Next.js 15, TypeScript, Clerk, Supabase, and Stripe for indie makers and small teams launching subscription products fast.',
-        fr: 'Starter kit SaaS commercial avec Next.js 15, TypeScript, Clerk, Supabase et Stripe, pense pour les indie makers et petites equipes qui lancent vite.',
-        sv: 'Kommersiellt SaaS-starterkit byggt med Next.js 15, TypeScript, Clerk, Supabase och Stripe for indie makers och sma team som vill lansera snabbt.'
+        en: 'Production-ready SaaS starter kit built with Next.js 15, TypeScript, Clerk, Supabase and Stripe for indie makers and small teams.',
+        fr: 'Starter kit SaaS pre-production avec Next.js 15, TypeScript, Clerk, Supabase et Stripe pour indie makers et petites equipes.',
+        sv: 'Produktionsklart SaaS-starterkit byggt med Next.js 15, TypeScript, Clerk, Supabase och Stripe for indie makers och sma team.'
       },
       impact: {
-        en: 'Includes ready-to-use auth, user dashboard, Stripe billing and webhooks, Supabase integration, and clean production-ready architecture patterns from day one.',
-        fr: 'Inclut auth prete a l emploi, dashboard utilisateur, billing Stripe et webhooks, integration Supabase et architecture propre prete prod des le premier jour.',
-        sv: 'Inkluderar fardig autentisering, anvandardashboard, Stripe billing och webhooks, Supabase-integration och rena produktionsklara arkitekturmonster fran dag ett.'
+        en: 'Includes authentication, user dashboard, Stripe billing/webhooks, database schema foundations, and clean architecture patterns. Sold commercially on Gumroad.',
+        fr: 'Inclut authentification, dashboard utilisateur, billing/webhooks Stripe, bases de schema DB et patterns d architecture propres. Vendu commercialement sur Gumroad.',
+        sv: 'Inkluderar autentisering, anvandardashboard, Stripe billing/webhooks, grundschema for databas och rena arkitekturmonster. Saljs kommersiellt pa Gumroad.'
       }
     },
     {
       name: 'Nuxt Commerce - Headless Storefront',
       repoUrl: 'https://github.com/francklebas/nuxt-commerce',
       previewImage: '/projects/nuxt-commerce.png',
+      role: {
+        en: 'Lead Frontend Architect',
+        fr: 'Lead Frontend Architect',
+        sv: 'Lead Frontend Architect'
+      },
       stack: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Stripe', 'Sanity'],
       useCase: {
-        en: 'Nuxt 4 premium storefront for solo founders and small brands, with YAML-first catalog or Sanity adapter, Stripe Checkout, SSR-first rendering, and i18n.',
-        fr: 'Storefront premium Nuxt 4 pour solo founders et petites marques, avec catalogue YAML ou adaptateur Sanity, Stripe Checkout, rendu SSR et i18n.',
-        sv: 'Premium storefront i Nuxt 4 for solo founders och mindre varumarken, med YAML-katalog eller Sanity-adapter, Stripe Checkout, SSR-forst och i18n.'
+        en: 'Premium headless e-commerce storefront built with Nuxt 4, Vue 3, TypeScript and Tailwind, with YAML-first catalog and Sanity adapter.',
+        fr: 'Storefront e-commerce headless premium construit avec Nuxt 4, Vue 3, TypeScript et Tailwind, avec catalogue YAML-first et adaptateur Sanity.',
+        sv: 'Premium headless e-handelsstorefront byggd med Nuxt 4, Vue 3, TypeScript och Tailwind, med YAML-first-katalog och Sanity-adapter.'
       },
       impact: {
-        en: 'Designed to launch a production-ready shop in one day, with high Lighthouse targets and full developer ownership.',
-        fr: 'Concu pour lancer une boutique prete pour la production en une journee, avec objectifs Lighthouse eleves et responsabilite complete.',
-        sv: 'Utformad for att lansera en produktionsklar butik pa en dag, med hoga Lighthouse-mal och fullt utvecklaransvar.'
+        en: 'Delivers Stripe Checkout, SSR-first rendering, i18n, and Lighthouse 95+ targets to launch maintainable online stores in record time.',
+        fr: 'Fournit Stripe Checkout, rendu SSR-first, i18n et objectifs Lighthouse 95+ pour lancer des boutiques maintenables en temps record.',
+        sv: 'Levererar Stripe Checkout, SSR-first-rendering, i18n och Lighthouse 95+ mal for att lansera hallbara onlinebutiker i rekordfart.'
       }
     },
     {
       name: 'JobBoard Stockholm',
       repoUrl: 'https://github.com/francklebas/jobboard',
       previewImage: '/projects/jobboard.png',
+      role: {
+        en: 'Full-Stack Architect & Developer',
+        fr: 'Full-Stack Architect & Developer',
+        sv: 'Full-Stack Architect & Developer'
+      },
       stack: ['Nuxt 4', 'FastAPI', 'Python', 'Docker', 'APScheduler'],
       useCase: {
-        en: 'Full-stack job aggregation platform combining SSR frontend, automated scraping, and Dockerized backend services for the Stockholm tech market.',
-        fr: 'Plateforme full-stack d aggregation d offres combinant frontend SSR, scraping automatise et services backend Dockerises pour le marche tech de Stockholm.',
-        sv: 'Fullstack-plattform for jobbaggregering med SSR-frontend, automatiserad scraping och dockeriserade backendtjanster for Stockholms techmarknad.'
+        en: 'Full-stack job aggregation platform for frontend roles in Stockholm, combining Nuxt 4 SSR, FastAPI backend services, and automated scraping.',
+        fr: 'Plateforme full-stack d aggregation d offres frontend a Stockholm, combinant Nuxt 4 SSR, backend FastAPI et scraping automatise.',
+        sv: 'Fullstack-plattform for frontendjobb i Stockholm, som kombinerar Nuxt 4 SSR, FastAPI-backend och automatiserad scraping.'
       },
       impact: {
-        en: 'Demonstrates full ownership from data ingestion and caching to user-facing product experience.',
-        fr: 'Demontre une responsabilite complete de l ingestion de donnees et du cache jusqu a l experience produit cote utilisateur.',
-        sv: 'Visar helhetsansvar fran datainhamtning och cache till produktupplevelsen for slutanvandaren.'
+        en: 'Demonstrates end-to-end ownership from infrastructure and data pipeline to scalable frontend architecture and product UX.',
+        fr: 'Demontre une responsabilite end-to-end de l infrastructure et du pipeline data jusqu a l architecture frontend scalable et l UX produit.',
+        sv: 'Visar end-to-end-ansvar fran infrastruktur och datapipeline till skalbar frontend-arkitektur och produkt-UX.'
       }
     }
   ]
