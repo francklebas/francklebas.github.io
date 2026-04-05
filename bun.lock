@@ -5,6 +5,8 @@
     "": {
       "name": "francklebas-github-io",
       "dependencies": {
+        "@fontsource/source-serif-4": "^5.2.8",
+        "@fontsource/space-grotesk": "^5.2.8",
         "@nuxtjs/i18n": "^9.5.1",
         "@sanity/client": "^7.12.2",
         "nuxt": "^4.4.2",
@@ -156,6 +158,10 @@
     "@eslint/object-schema": ["@eslint/object-schema@3.0.4", "", {}, "sha512-55lO/7+Yp0ISKRP0PsPtNTeNGapXaO085aELZmWCVc5SH3jfrqpuU6YgOdIxMS99ZHkQN1cXKE+cdIqwww9ptw=="],
 
     "@eslint/plugin-kit": ["@eslint/plugin-kit@0.7.0", "", { "dependencies": { "@eslint/core": "^1.2.0", "levn": "^0.4.1" } }, "sha512-ejvBr8MQCbVsWNZnCwDXjUKq40MDmHalq7cJ6e9s/qzTUFIIo/afzt1Vui9T97FM/V/pN4YsFVoed5NIa96RDg=="],
+
+    "@fontsource/source-serif-4": ["@fontsource/source-serif-4@5.2.9", "", {}, "sha512-er/Pym9emsEVJNf947umJ4kXarXfsiN6CN7kTYinefKRaHLwiquiiHOZvKvxWgkV8JMCf3pV3g0NcsPFpVCH9w=="],
+
+    "@fontsource/space-grotesk": ["@fontsource/space-grotesk@5.2.10", "", {}, "sha512-XNXEbT74OIITPqw2H6HXwPDp85fy43uxfBwFR5PU+9sLnjuLj12KlhVM9nZVN6q6dlKjkuN8JisW/OBxwxgUew=="],
 
     "@humanfs/core": ["@humanfs/core@0.19.1", "", {}, "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="],
 

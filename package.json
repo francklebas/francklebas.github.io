@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fontsource/source-serif-4": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.8",
     "@nuxtjs/i18n": "^9.5.1",
     "@sanity/client": "^7.12.2",
     "nuxt": "^4.4.2",
