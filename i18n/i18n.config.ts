@@ -54,7 +54,7 @@ export default {
         discussProject: 'Diskutera ditt projekt',
         builtWith: 'Byggd med Nuxt 4, DaisyUI, Sanity och GitHub Pages',
         featuredWork: 'Utvalda arbeten',
-        myApproach: 'Mitt arbetssatt',
+        myApproach: 'Min approach',
         architectLabel: 'Frontend Architect',
         callLabel: 'Ring',
         emailLabel: 'E-post',

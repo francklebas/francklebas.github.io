@@ -50,11 +50,11 @@ export const fallbackContent: SiteContent = {
     approachTitle: {
       en: 'My Approach',
       fr: 'Mon approche',
-      sv: 'Mitt arbetssatt'
+      sv: 'Min approach'
     },
     approachIntro: [
       {
-        en: 'I design frontend systems that are fast, scalable, and maintainable without sacrificing user experience.',
+        en: 'I design frontend systems that are fast, scalable, and maintainable — without sacrificing the user experience.',
         fr: 'Je conçois des systèmes frontend rapides, scalables et maintenables, sans jamais sacrifier l\'expérience utilisateur.',
         sv: 'Jag designar frontend-system som är snabba, skalbara och underhållbara – utan att kompromissa med användarupplevelsen.'
       },
@@ -66,7 +66,7 @@ export const fallbackContent: SiteContent = {
     ],
     approachBullets: [
       {
-        en: 'Build clean abstractions that scale with the product.',
+        en: 'Build clean abstractions that evolve with the product.',
         fr: 'Créer des abstractions claires qui évoluent avec le produit.',
         sv: 'Bygga rena abstraktioner som växer med produkten.'
       },
@@ -84,7 +84,7 @@ export const fallbackContent: SiteContent = {
     metricsTitle: {
       en: 'Impact at a glance',
       fr: 'Impact en bref',
-      sv: 'Effekt i korthet'
+      sv: 'Impact i korthet'
     },
     metrics: [
       {
