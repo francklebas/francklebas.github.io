@@ -143,6 +143,35 @@ h2 {
   align-items: center;
 }
 
+.hero-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.5fr 0.8fr;
+  align-items: start;
+}
+
+.profile-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -45% -20%;
+  height: 140px;
+  background: radial-gradient(circle, color-mix(in oklab, var(--color-primary) 35%, transparent) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  border: 2px solid color-mix(in oklab, var(--color-base-content) 25%, transparent);
+  object-fit: cover;
+}
+
 .grid {
   display: grid;
   gap: 1rem;
@@ -282,6 +311,10 @@ h2 {
     width: 100%;
     justify-content: flex-start;
     overflow-x: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
   }
 
   .metric-card {

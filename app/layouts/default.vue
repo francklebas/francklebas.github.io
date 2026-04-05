@@ -2,26 +2,8 @@
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 const { locale, t } = useI18n()
-const theme = useState<'slowagain' | 'abyss'>('site-theme', () => 'abyss')
-
-onMounted(() => {
-  const savedTheme = localStorage.getItem('site-theme')
-  if (savedTheme === 'slowagain' || savedTheme === 'abyss') {
-    theme.value = savedTheme
-  }
-})
-
-watch(theme, (value) => {
-  localStorage.setItem('site-theme', value)
-})
-
-const isAbyss = computed(() => theme.value === 'abyss')
 const contactEmail = 'francklebas@ik.me'
 const contactPhone = '+46 (0)735 103 291'
-
-function toggleTheme() {
-  theme.value = theme.value === 'abyss' ? 'slowagain' : 'abyss'
-}
 
 const navItems = computed(() => [
   { to: localePath('/'), label: t('nav.home') },
@@ -38,7 +20,7 @@ const languageLinks = computed(() => [
 </script>
 
 <template>
-  <div class="site-shell" :data-theme="theme">
+  <div class="site-shell" data-theme="abyss">
     <header class="site-header">
       <div class="site-header-inner navbar bg-base-200/80 border border-base-content/15">
         <div class="navbar-start">
@@ -57,9 +39,6 @@ const languageLinks = computed(() => [
         </nav>
 
         <div class="navbar-end" aria-label="Language switcher">
-          <button class="btn btn-ghost btn-xs mr-2" type="button" @click="toggleTheme">
-            {{ isAbyss ? 'SLOWAGAIN' : 'ABYSS' }}
-          </button>
           <div class="join">
             <NuxtLink
               v-for="lang in languageLinks"

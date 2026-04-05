@@ -14,6 +14,8 @@ export default {
         discussProject: 'Discuss your project',
         builtWith: 'Built with Nuxt 4, DaisyUI, Sanity, and GitHub Pages',
         featuredWork: 'Featured work',
+        myApproach: 'My approach',
+        architectLabel: 'Frontend Architect',
         callLabel: 'Call',
         emailLabel: 'Email',
         viewAllProjects: 'View all projects'
@@ -32,6 +34,8 @@ export default {
         discussProject: 'Discuter de votre projet',
         builtWith: 'Construit avec Nuxt 4, DaisyUI, Sanity et GitHub Pages',
         featuredWork: 'Projets en vitrine',
+        myApproach: 'Mon approche',
+        architectLabel: 'Frontend Architect',
         callLabel: 'Appel',
         emailLabel: 'Email',
         viewAllProjects: 'Voir tous les projets'
@@ -50,6 +54,8 @@ export default {
         discussProject: 'Diskutera ditt projekt',
         builtWith: 'Byggd med Nuxt 4, DaisyUI, Sanity och GitHub Pages',
         featuredWork: 'Utvalda arbeten',
+        myApproach: 'Mitt arbetssatt',
+        architectLabel: 'Frontend Architect',
         callLabel: 'Ring',
         emailLabel: 'E-post',
         viewAllProjects: 'Se alla projekt'

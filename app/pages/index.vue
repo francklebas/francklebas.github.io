@@ -41,18 +41,32 @@ useSeoMeta({
 <template>
   <section class="page" v-if="content">
     <p class="eyebrow badge badge-outline reveal-init">{{ content.home.hero.eyebrow[locale as 'en' | 'fr' | 'sv'] }}</p>
-    <h1>{{ content.home.hero.title[locale as 'en' | 'fr' | 'sv'] }}</h1>
-    <p class="lead">{{ content.home.hero.lead[locale as 'en' | 'fr' | 'sv'] }}</p>
+    <div class="hero-grid">
+      <div class="reveal-init">
+        <h1>{{ content.home.hero.title[locale as 'en' | 'fr' | 'sv'] }}</h1>
+        <p class="lead">{{ content.home.hero.lead[locale as 'en' | 'fr' | 'sv'] }}</p>
 
-    <div class="hero-actions reveal-init" style="--reveal-delay: 80ms">
-      <NuxtLink class="btn btn-primary" :to="localePath(content.home.hero.primaryCtaHref)">
-        {{ content.home.hero.primaryCtaLabel[locale as 'en' | 'fr' | 'sv'] }}
-      </NuxtLink>
-      <a class="btn btn-outline btn-secondary" :href="heroMailtoHref">{{ t('ui.discussProject') }}</a>
-      <span class="badge badge-success badge-soft">{{ t('ui.availableForWork') }}</span>
+        <div class="hero-actions reveal-init" style="--reveal-delay: 80ms">
+          <NuxtLink class="btn btn-primary" :to="localePath(content.home.hero.primaryCtaHref)">
+            {{ content.home.hero.primaryCtaLabel[locale as 'en' | 'fr' | 'sv'] }}
+          </NuxtLink>
+          <a class="btn btn-outline btn-secondary" :href="heroMailtoHref">{{ t('ui.discussProject') }}</a>
+          <span class="badge badge-success badge-soft">{{ t('ui.availableForWork') }}</span>
+        </div>
+      </div>
+
+      <aside class="profile-card card bg-base-100 border border-base-content/15 reveal-init" style="--reveal-delay: 120ms">
+        <div class="card-body p-4">
+          <img src="/profile/franck-lebas-avatar.jpg" alt="Franck Lebas" class="avatar" loading="lazy" decoding="async" />
+          <p class="font-semibold">Franck Lebas</p>
+          <p class="muted text-sm">{{ t('ui.architectLabel') }}</p>
+          <p class="muted text-sm">Stockholm · 17 years</p>
+          <div class="badge badge-outline badge-sm">Vue · React · TypeScript</div>
+        </div>
+      </aside>
     </div>
 
-    <div class="section reveal-init" style="--reveal-delay: 160ms">
+    <div class="section reveal-init" style="--reveal-delay: 170ms">
       <h2>{{ content.home.highlightsTitle[locale as 'en' | 'fr' | 'sv'] }}</h2>
       <div class="grid cols-2">
         <article
@@ -67,7 +81,22 @@ useSeoMeta({
       </div>
     </div>
 
-    <div class="section reveal-init" style="--reveal-delay: 240ms">
+    <div class="section reveal-init" style="--reveal-delay: 220ms">
+      <h2>{{ t('ui.myApproach') }}</h2>
+      <div class="grid cols-2">
+        <article
+          v-for="item in content.about.philosophy"
+          :key="item.en"
+          class="card bg-base-100 border border-base-content/15 hover-lift"
+        >
+          <div class="card-body p-5">
+            <p>{{ item[locale as 'en' | 'fr' | 'sv'] }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="section reveal-init" style="--reveal-delay: 280ms">
       <h2>{{ content.home.metricsTitle[locale as 'en' | 'fr' | 'sv'] }}</h2>
       <div class="grid cols-2">
         <article
@@ -93,7 +122,7 @@ useSeoMeta({
       </div>
     </div>
 
-    <div class="section reveal-init" style="--reveal-delay: 320ms">
+    <div class="section reveal-init" style="--reveal-delay: 360ms">
       <div class="section-head">
         <h2>{{ t('ui.featuredWork') }}</h2>
         <NuxtLink class="btn btn-sm btn-ghost" :to="localePath('/projects')">{{ t('ui.viewAllProjects') }}</NuxtLink>
