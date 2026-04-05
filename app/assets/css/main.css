@@ -1,0 +1,316 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "slowagain";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(14% 0.005 285.823);
+  --color-base-200: oklch(21% 0.006 285.885);
+  --color-base-300: oklch(27% 0.006 286.033);
+  --color-base-content: oklch(96% 0.001 286.375);
+  --color-primary: oklch(57% 0.245 27.325);
+  --color-primary-content: oklch(97% 0.013 17.38);
+  --color-secondary: oklch(57% 0.245 27.325);
+  --color-secondary-content: oklch(97% 0.013 17.38);
+  --color-accent: oklch(66% 0.179 58.318);
+  --color-accent-content: oklch(98% 0.022 95.277);
+  --color-neutral: oklch(27% 0.006 286.033);
+  --color-neutral-content: oklch(98% 0 0);
+  --color-info: oklch(68% 0.169 237.323);
+  --color-info-content: oklch(97% 0.013 236.62);
+  --color-success: oklch(70% 0.14 182.503);
+  --color-success-content: oklch(98% 0.014 180.72);
+  --color-warning: oklch(70% 0.213 47.604);
+  --color-warning-content: oklch(98% 0.016 73.684);
+  --color-error: oklch(65% 0.241 354.308);
+  --color-error-content: oklch(97% 0.014 343.198);
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--color-base-content);
+  background:
+    radial-gradient(circle at 10% 5%, color-mix(in oklab, var(--color-primary) 22%, transparent), transparent 45%),
+    radial-gradient(circle at 86% 24%, color-mix(in oklab, var(--color-accent) 18%, transparent), transparent 42%),
+    linear-gradient(150deg, var(--color-base-100) 0%, var(--color-base-200) 45%, var(--color-base-300) 100%);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  width: 100%;
+  padding: 1.2rem;
+}
+
+.site-header-inner {
+  width: 100%;
+  border-radius: var(--radius-box);
+  box-shadow: 0 22px 50px -35px color-mix(in oklab, #000 70%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.site-main {
+  width: 100%;
+  padding: 0 1.2rem 1.2rem;
+}
+
+.site-main-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.page {
+  background: color-mix(in oklab, var(--color-base-200) 74%, var(--color-base-100));
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 18%, transparent);
+  border-radius: calc(var(--radius-box) + 0.3rem);
+  box-shadow: 0 24px 55px -34px color-mix(in oklab, #000 72%, transparent);
+  padding: 1.6rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  margin-bottom: 0.6rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5.8vw, 3.2rem);
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3.8vw, 1.8rem);
+  margin-bottom: 0.8rem;
+}
+
+.lead {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+  color: color-mix(in oklab, var(--color-base-content) 86%, transparent);
+  margin: 0.85rem 0 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.section {
+  margin-top: 1.75rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.muted {
+  color: color-mix(in oklab, var(--color-base-content) 68%, transparent);
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project-preview {
+  height: 168px;
+  margin: 0.9rem 0.9rem 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius-box) - 0.2rem);
+  background:
+    linear-gradient(120deg, color-mix(in oklab, var(--color-primary) 24%, transparent), transparent 60%),
+    linear-gradient(40deg, color-mix(in oklab, var(--color-accent) 24%, transparent), transparent 70%),
+    color-mix(in oklab, var(--color-base-200) 75%, var(--color-base-300));
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 15%, transparent);
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.06);
+  transition: transform 0.45s ease;
+}
+
+.hover-lift:hover .project-preview img {
+  transform: scale(1.03);
+}
+
+.featured-project {
+  grid-column: span 2;
+}
+
+.hover-lift {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 42px -30px color-mix(in oklab, var(--color-primary) 45%, #000);
+  border-color: color-mix(in oklab, var(--color-primary) 50%, var(--color-base-content) 15%);
+}
+
+.reveal-init {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-init.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-footer {
+  margin-top: auto;
+  width: 100%;
+  border-top: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+  background: color-mix(in oklab, var(--color-base-200) 82%, transparent);
+}
+
+.site-footer-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 1.1rem 1.2rem;
+  color: color-mix(in oklab, var(--color-base-content) 68%, transparent);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-meta {
+  margin-top: 0.3rem;
+}
+
+.footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding: 0.8rem;
+  }
+
+  .site-main {
+    padding: 0 0.8rem 0.8rem;
+  }
+
+  .site-footer-inner {
+    padding: 0.9rem 0.8rem;
+  }
+
+  .page {
+    padding: 1.2rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .metric-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .featured-project {
+    grid-column: span 1;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .reveal-init.is-visible,
+  .hover-lift {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
