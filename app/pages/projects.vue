@@ -47,7 +47,7 @@ useSeoMeta({
           <p class="muted">{{ project.impact[locale as 'en' | 'fr' | 'sv'] }}</p>
 
           <div class="flex flex-wrap gap-2 my-2">
-            <span v-for="tech in project.stack" :key="tech" class="badge badge-outline">{{ tech }}</span>
+            <span v-for="tech in project.stack" :key="tech" class="badge badge-outline project-tag">{{ tech }}</span>
           </div>
 
           <div class="card-actions justify-end">

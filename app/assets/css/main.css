@@ -224,6 +224,17 @@ h2 {
   margin: 0.32rem 0;
 }
 
+.project-tag {
+  height: auto;
+  min-height: calc(var(--size) + 0.08rem);
+  padding-block: 0.32rem;
+  padding-inline: 0.72rem;
+  line-height: 1.2;
+  white-space: normal;
+  text-align: left;
+  align-items: center;
+}
+
 .metric-card {
   display: flex;
   align-items: center;
@@ -381,6 +392,10 @@ h2 {
 
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-tag {
+    font-size: 0.82rem;
   }
 
   .hero-actions {
