@@ -20,7 +20,7 @@ const languageLinks = computed(() => [
 </script>
 
 <template>
-  <div class="site-shell" data-theme="abyss">
+  <div class="site-shell" data-theme="dracula">
     <header class="site-header">
       <div class="site-header-inner navbar bg-base-200/80 border border-base-content/15">
         <div class="navbar-start">
