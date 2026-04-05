@@ -210,51 +210,58 @@ export const fallbackContent: SiteContent = {
   },
   projects: [
     {
-      name: 'jobboard',
-      repoUrl: 'https://github.com/francklebas/jobboard',
-      previewImage: '/projects/jobboard.png',
-      stack: ['Nuxt 4', 'FastAPI', 'PostgreSQL', 'Docker', 'Terraform'],
-      useCase: {
-        en: 'A full-stack recruitment platform designed for operational clarity and maintainable growth.',
-        fr: 'Une plateforme recrutement full-stack pensee pour la clarte operationnelle et la maintenabilite.',
-        sv: 'En fullstack-plattform for rekrytering med fokus pa tydlig drift och hallbar utveckling.'
-      },
-      impact: {
-        en: 'Covers infra-to-UI ownership with infrastructure as code and production workflows.',
-        fr: 'Demontre une responsabilite complete de l infra a l UI avec IaC et workflows de production.',
-        sv: 'Visar helhetsansvar fran infrastruktur till UI med IaC och produktionsfloden.'
-      }
-    },
-    {
-      name: 'nuxt-commerce',
-      repoUrl: 'https://github.com/francklebas/nuxt-commerce',
-      previewImage: '/projects/nuxt-commerce.png',
-      stack: ['Nuxt 4', 'Stripe', 'Nuxt Content'],
-      useCase: {
-        en: 'Headless-style e-commerce implementation with static-first rendering and a content-driven catalog.',
-        fr: 'Implementation e-commerce headless avec rendu statique et catalogue pilote par contenu.',
-        sv: 'Headless-liknande e-handelslosning med statisk rendering och innehallsdriven katalog.'
-      },
-      impact: {
-        en: 'Shows practical architecture for product pages, checkout flow, and editor autonomy.',
-        fr: 'Montre une architecture pragmatique pour pages produit, checkout et autonomie editoriale.',
-        sv: 'Visar en praktisk arkitektur for produktsidor, checkout och redaktionell autonomi.'
-      }
-    },
-    {
-      name: 'next-swift',
+      name: 'NextSwift Pro - SaaS Boilerplate',
       repoUrl: 'https://github.com/francklebas/next-swift',
       previewImage: '/projects/next-swift.png',
-      stack: ['Next.js', 'TypeScript', 'Supabase', 'Clerk', 'Stripe'],
+      stack: [
+        'Next.js 15 App Router',
+        'TypeScript',
+        'Clerk Authentication',
+        'Supabase Backend',
+        'Stripe Subscriptions',
+        'Sold on Gumroad'
+      ],
       useCase: {
-        en: 'Commercial SaaS starter focused on reliable defaults for authentication, billing, and product shipping.',
-        fr: 'Starter SaaS commercial avec des bases solides pour auth, billing et livraison produit.',
-        sv: 'Kommersiell SaaS-starter med robusta standardval for inloggning, betalning och leverans.'
+        en: 'Commercial SaaS starter kit built with Next.js 15, TypeScript, Clerk, Supabase, and Stripe for indie makers and small teams launching subscription products fast.',
+        fr: 'Starter kit SaaS commercial avec Next.js 15, TypeScript, Clerk, Supabase et Stripe, pense pour les indie makers et petites equipes qui lancent vite.',
+        sv: 'Kommersiellt SaaS-starterkit byggt med Next.js 15, TypeScript, Clerk, Supabase och Stripe for indie makers och sma team som vill lansera snabbt.'
       },
       impact: {
-        en: 'Accelerates time-to-market for product teams launching subscription products.',
-        fr: 'Accelere le time-to-market des equipes lancant des produits a abonnement.',
-        sv: 'Minskar time-to-market for team som lanserar prenumerationsprodukter.'
+        en: 'Includes ready-to-use auth, user dashboard, Stripe billing and webhooks, Supabase integration, and clean production-ready architecture patterns from day one.',
+        fr: 'Inclut auth prete a l emploi, dashboard utilisateur, billing Stripe et webhooks, integration Supabase et architecture propre prete prod des le premier jour.',
+        sv: 'Inkluderar fardig autentisering, anvandardashboard, Stripe billing och webhooks, Supabase-integration och rena produktionsklara arkitekturmonster fran dag ett.'
+      }
+    },
+    {
+      name: 'Nuxt Commerce - Headless Storefront',
+      repoUrl: 'https://github.com/francklebas/nuxt-commerce',
+      previewImage: '/projects/nuxt-commerce.png',
+      stack: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Stripe', 'Sanity'],
+      useCase: {
+        en: 'Nuxt 4 premium storefront for solo founders and small brands, with YAML-first catalog or Sanity adapter, Stripe Checkout, SSR-first rendering, and i18n.',
+        fr: 'Storefront premium Nuxt 4 pour solo founders et petites marques, avec catalogue YAML ou adaptateur Sanity, Stripe Checkout, rendu SSR et i18n.',
+        sv: 'Premium storefront i Nuxt 4 for solo founders och mindre varumarken, med YAML-katalog eller Sanity-adapter, Stripe Checkout, SSR-forst och i18n.'
+      },
+      impact: {
+        en: 'Designed to launch a production-ready shop in one day, with high Lighthouse targets and full developer ownership.',
+        fr: 'Concu pour lancer une boutique prete pour la production en une journee, avec objectifs Lighthouse eleves et responsabilite complete.',
+        sv: 'Utformad for att lansera en produktionsklar butik pa en dag, med hoga Lighthouse-mal och fullt utvecklaransvar.'
+      }
+    },
+    {
+      name: 'JobBoard Stockholm',
+      repoUrl: 'https://github.com/francklebas/jobboard',
+      previewImage: '/projects/jobboard.png',
+      stack: ['Nuxt 4', 'FastAPI', 'Python', 'Docker', 'APScheduler'],
+      useCase: {
+        en: 'Full-stack job aggregation platform combining SSR frontend, automated scraping, and Dockerized backend services for the Stockholm tech market.',
+        fr: 'Plateforme full-stack d aggregation d offres combinant frontend SSR, scraping automatise et services backend Dockerises pour le marche tech de Stockholm.',
+        sv: 'Fullstack-plattform for jobbaggregering med SSR-frontend, automatiserad scraping och dockeriserade backendtjanster for Stockholms techmarknad.'
+      },
+      impact: {
+        en: 'Demonstrates full ownership from data ingestion and caching to user-facing product experience.',
+        fr: 'Demontre une responsabilite complete de l ingestion de donnees et du cache jusqu a l experience produit cote utilisateur.',
+        sv: 'Visar helhetsansvar fran datainhamtning och cache till produktupplevelsen for slutanvandaren.'
       }
     }
   ]

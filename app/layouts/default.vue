@@ -2,7 +2,7 @@
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 const { locale, t } = useI18n()
-const theme = useState<'slowagain' | 'abyss'>('site-theme', () => 'slowagain')
+const theme = useState<'slowagain' | 'abyss'>('site-theme', () => 'abyss')
 
 onMounted(() => {
   const savedTheme = localStorage.getItem('site-theme')
