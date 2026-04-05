@@ -22,14 +22,14 @@ export default {
       }
     },
     fr: {
-      nav: { home: 'Accueil', about: 'A propos', projects: 'Projets', contact: 'Contact' },
+      nav: { home: 'Accueil', about: 'À propos', projects: 'Projets', contact: 'Contact' },
       ui: {
-        availableNow: 'Disponible immediatement',
+        availableNow: 'Disponible immédiatement',
         viewSource: 'Code source',
         openGithub: 'Voir sur GitHub',
         getInTouch: 'Entrer en contact',
         contactByEmail: 'Contacter par email',
-        basedIn: 'Base a Stockholm, Suede',
+        basedIn: 'Basé à Stockholm, Suède',
         availableForWork: 'Disponible en freelance et en mission contractuelle',
         discussProject: 'Discuter de votre projet',
         builtWith: 'Construit avec Nuxt 4, DaisyUI, Sanity et GitHub Pages',

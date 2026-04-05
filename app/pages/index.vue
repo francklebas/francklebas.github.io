@@ -102,9 +102,9 @@ useSeoMeta({
           <p class="muted">
             {{
               locale === 'fr'
-                ? 'Une architecture frontend reussie est invisible quand elle fonctionne, et evidente quand elle echoue.'
+                ? 'Une architecture frontend réussie est invisible quand elle fonctionne, et évidente quand elle échoue.'
                 : locale === 'sv'
-                  ? 'Bra frontend-arkitektur ar osynlig nar den fungerar, och uppenbar nar den inte gor det.'
+                  ? 'En bra frontend-arkitektur är osynlig när den fungerar – och smärtsamt uppenbar när den inte gör det.'
                   : 'Great frontend architecture is invisible when it works, and obvious when it does not.'
             }}
           </p>
