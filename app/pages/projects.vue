@@ -36,6 +36,8 @@ useSeoMeta({
             :alt="`${project.name} preview`"
             loading="lazy"
             decoding="async"
+            width="1200"
+            height="630"
           />
         </figure>
         <div class="card-body p-5">

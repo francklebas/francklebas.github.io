@@ -59,11 +59,19 @@ useSeoMeta({
 
       <aside class="profile-card card bg-base-100 border border-base-content/15 reveal-init" style="--reveal-delay: 120ms">
         <div class="card-body p-4">
-          <img src="/profile/franck-lebas-avatar.jpg" alt="Franck Lebas" class="avatar" loading="lazy" decoding="async" />
+          <img
+            src="/profile/franck-lebas-avatar.webp"
+            alt="Franck Lebas"
+            class="avatar"
+            loading="lazy"
+            decoding="async"
+            width="88"
+            height="88"
+          />
           <p class="font-semibold">Franck Lebas</p>
           <p class="muted text-sm">{{ t('ui.architectLabel') }}</p>
           <p class="muted text-sm">Stockholm · 17 years</p>
-          <div class="badge badge-outline badge-sm">Vue · React · TypeScript</div>
+          <span class="badge badge-outline badge-sm profile-stack">Vue · React · TypeScript</span>
         </div>
       </aside>
     </div>
@@ -150,6 +158,8 @@ useSeoMeta({
               :alt="`${project.name} preview`"
               loading="lazy"
               decoding="async"
+              width="1200"
+              height="630"
             />
           </figure>
           <div class="card-body p-5">

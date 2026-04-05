@@ -246,7 +246,7 @@ export const fallbackContent: SiteContent = {
     {
       name: 'NextSwift Pro - SaaS Boilerplate',
       repoUrl: 'https://github.com/francklebas/next-swift',
-      previewImage: '/projects/next-swift.png',
+      previewImage: '/projects/next-swift.webp',
       role: {
         en: 'Lead Developer & Architect',
         fr: 'Lead Developer & Architect',
@@ -274,7 +274,7 @@ export const fallbackContent: SiteContent = {
     {
       name: 'Nuxt Commerce - Headless Storefront',
       repoUrl: 'https://github.com/francklebas/nuxt-commerce',
-      previewImage: '/projects/nuxt-commerce.png',
+      previewImage: '/projects/nuxt-commerce.webp',
       role: {
         en: 'Lead Frontend Architect',
         fr: 'Lead Frontend Architect',
@@ -295,7 +295,7 @@ export const fallbackContent: SiteContent = {
     {
       name: 'JobBoard Stockholm',
       repoUrl: 'https://github.com/francklebas/jobboard',
-      previewImage: '/projects/jobboard.png',
+      previewImage: '/projects/jobboard.webp',
       role: {
         en: 'Full-Stack Architect & Developer',
         fr: 'Full-Stack Architect & Developer',
