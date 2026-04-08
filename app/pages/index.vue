@@ -3,6 +3,7 @@ import { fallbackContent } from '~/data/fallback-content'
 
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
+const config = useRuntimeConfig()
 
 const { data } = await useAsyncData('site-content', loadSiteContent)
 
@@ -33,6 +34,10 @@ const heroMailtoHref = computed(() => {
   return `mailto:${contact.email}?subject=${encodeURIComponent(contact.mailtoSubject[current])}&body=${contact.mailtoBody[current]}`
 })
 
+const calendlyHref = computed(() => config.public.calendlyUrl || content.value.contact.calendly || '')
+
+const heroContactHref = computed(() => calendlyHref.value || heroMailtoHref.value)
+
 useSeoMeta({
   title: 'Franck Lebas - Frontend Architect',
   description:
@@ -52,7 +57,14 @@ useSeoMeta({
           <NuxtLink class="btn btn-primary" :to="localePath(content.home.hero.primaryCtaHref)">
             {{ content.home.hero.primaryCtaLabel[locale as 'en' | 'fr' | 'sv'] }}
           </NuxtLink>
-          <a class="btn btn-outline btn-secondary" :href="heroMailtoHref">{{ t('ui.discussProject') }}</a>
+          <a
+            class="btn btn-outline btn-secondary"
+            :href="heroContactHref"
+            :target="calendlyHref ? '_blank' : undefined"
+            :rel="calendlyHref ? 'noopener noreferrer' : undefined"
+          >
+            {{ t('ui.discussProject') }}
+          </a>
           <span class="badge badge-success badge-soft">{{ t('ui.availableForWork') }}</span>
         </div>
       </div>

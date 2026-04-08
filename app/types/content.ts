@@ -39,6 +39,7 @@ export interface ContactContent {
   intro: LocalizedText
   mailtoSubject: LocalizedText
   mailtoBody: LocalizedText
+  calendly?: string
   email: string
   phone?: string
   linkedin: string

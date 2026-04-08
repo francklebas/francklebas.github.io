@@ -40,6 +40,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     sanityReadToken: process.env.SANITY_READ_TOKEN,
     public: {
+      calendlyUrl: process.env.NUXT_PUBLIC_CALENDLY_URL || '',
       sanity: {
         projectId: process.env.SANITY_PROJECT_ID || '5v62g31w',
         dataset: process.env.SANITY_DATASET || 'production',

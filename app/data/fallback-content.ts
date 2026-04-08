@@ -208,14 +208,14 @@ export const fallbackContent: SiteContent = {
   },
   contact: {
     title: {
-      en: 'Contact',
-      fr: 'Contact',
-      sv: 'Kontakt'
+      en: 'Get in touch',
+      fr: 'Contactez-moi',
+      sv: 'Kontakta mig'
     },
     intro: {
-      en: 'For architecture consulting, senior frontend roles, or product collaboration, the fastest way is direct email.',
-      fr: 'Pour des missions d\'architecture, des rôles senior frontend, ou une collaboration produit, le plus simple est un email direct.',
-      sv: 'For arkitekturuppdrag, seniora frontendroller eller produktsamarbeten ar direkt e-post det snabbaste alternativet.'
+      en: 'For architecture consulting or senior frontend roles, book a call or send me an email.',
+      fr: 'Pour des missions d\'architecture ou des rôles senior frontend, réservez un appel ou envoyez-moi un email.',
+      sv: 'För arkitekturuppdrag eller seniora frontend-roller, boka ett samtal eller skicka ett e-postmeddelande.'
     },
     mailtoSubject: {
       en: 'Project inquiry from francklebas.github.io',
@@ -227,6 +227,7 @@ export const fallbackContent: SiteContent = {
       fr: 'Bonjour Franck,%0D%0A%0D%0ANom:%0D%0AEntreprise:%0D%0AContexte:%0D%0APlanning:%0D%0A%0D%0ACordialement,',
       sv: 'Hej Franck,%0D%0A%0D%0ANamn:%0D%0AForetag:%0D%0ABakgrund:%0D%0ATidsplan:%0D%0A%0D%0AVanliga halsningar,'
     },
+    calendly: 'https://calendly.com/francklebas-ik/30min',
     email: 'francklebas@ik.me',
     phone: '+46 (0)735 103 291',
     linkedin: 'https://linkedin.com/in/francklebas',

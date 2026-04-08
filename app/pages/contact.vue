@@ -2,6 +2,7 @@
 import { fallbackContent } from '~/data/fallback-content'
 
 const { locale, t } = useI18n()
+const config = useRuntimeConfig()
 const { data } = await useAsyncData('site-content', loadSiteContent)
 
 const content = computed(() => data.value || fallbackContent)
@@ -15,6 +16,10 @@ const mailtoHref = computed(() => {
   const contact = content.value.contact
   return `mailto:${contact.email}?subject=${encodeURIComponent(contact.mailtoSubject[current])}&body=${contact.mailtoBody[current]}`
 })
+
+const calendlyHref = computed(() => config.public.calendlyUrl || content.value.contact.calendly || '')
+const contactCtaHref = computed(() => calendlyHref.value || mailtoHref.value)
+const contactCtaLabel = computed(() => (calendlyHref.value ? t('ui.bookCall') : t('ui.contactByEmail')))
 
 useSeoMeta({
   title: 'Contact - Franck Lebas',
@@ -33,7 +38,14 @@ useSeoMeta({
         <div class="card-body p-5">
           <h2>{{ t('ui.contactByEmail') }}</h2>
           <p class="muted">{{ content.contact.email }}</p>
-          <a class="btn btn-primary" :href="mailtoHref">{{ t('ui.contactByEmail') }}</a>
+          <a
+            class="btn btn-primary"
+            :href="contactCtaHref"
+            :target="calendlyHref ? '_blank' : undefined"
+            :rel="calendlyHref ? 'noopener noreferrer' : undefined"
+          >
+            {{ contactCtaLabel }}
+          </a>
         </div>
       </article>
 
