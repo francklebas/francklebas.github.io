@@ -1,78 +1,95 @@
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n'],
-  css: ['~/assets/css/main.css'],
+  modules: ["@nuxtjs/i18n", "@vueuse/motion/nuxt"],
+  css: ["~/assets/css/main.css"],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: process.env.NUXT_APP_BASE_URL || "/",
     head: {
-      title: 'Franck Lebas - Frontend Architect',
+      title: "Franck Lebas - Frontend Architect",
       htmlAttrs: {
-        lang: 'en'
+        lang: "en",
       },
       meta: [
         {
-          name: 'description',
+          name: "description",
           content:
-            'Frontend Architect with 17 years of experience in Vue, React, TypeScript, and high-traffic product engineering.'
-        }
-      ]
-    }
+            "Frontend Architect with 17 years of experience in Vue, React, TypeScript, and high-traffic product engineering.",
+        },
+      ],
+    },
   },
   routeRules: {
-    '/**': {
+    "/**": {
       headers: {
-        'Content-Security-Policy':
+        "Content-Security-Policy":
           "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://*.sanity.io; frame-ancestors 'none'; base-uri 'self';",
-        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
-        'X-Content-Type-Options': 'nosniff',
-        'X-Frame-Options': 'DENY',
-        'Referrer-Policy': 'strict-origin-when-cross-origin'
-      }
-    }
+        "Strict-Transport-Security":
+          "max-age=31536000; includeSubDomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+      },
+    },
   },
   runtimeConfig: {
     sanityReadToken: process.env.SANITY_READ_TOKEN,
     public: {
-      calendlyUrl: process.env.NUXT_PUBLIC_CALENDLY_URL || '',
+      calendlyUrl: process.env.NUXT_PUBLIC_CALENDLY_URL || "",
       sanity: {
-        projectId: process.env.SANITY_PROJECT_ID || '5v62g31w',
-        dataset: process.env.SANITY_DATASET || 'production',
-        apiVersion: process.env.SANITY_API_VERSION || '2025-01-01'
-      }
-    }
+        projectId: process.env.SANITY_PROJECT_ID || "5v62g31w",
+        dataset: process.env.SANITY_DATASET || "production",
+        apiVersion: process.env.SANITY_API_VERSION || "2025-01-01",
+      },
+      motion: {
+        directives: {
+          "pop-bottom": {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+            },
+          },
+        },
+      },
+    },
   },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/about', '/contact', '/projects']
-    }
+      routes: ["/", "/about", "/contact", "/projects"],
+    },
   },
   i18n: {
-    baseUrl: 'https://francklebas.github.io',
+    baseUrl: "https://francklebas.github.io",
     locales: [
-      { code: 'en', language: 'en-US', name: 'English' },
-      { code: 'fr', language: 'fr-FR', name: 'Francais' },
-      { code: 'sv', language: 'sv-SE', name: 'Svenska' }
+      { code: "en", language: "en-US", name: "English" },
+      { code: "fr", language: "fr-FR", name: "Francais" },
+      { code: "sv", language: "sv-SE", name: "Svenska" },
     ],
-    strategy: 'prefix_except_default',
-    defaultLocale: 'en',
+    strategy: "prefix_except_default",
+    defaultLocale: "en",
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
       alwaysRedirect: false,
-      fallbackLocale: 'en'
+      fallbackLocale: "en",
     },
     bundle: {
-      optimizeTranslationDirective: false
+      optimizeTranslationDirective: false,
     },
-    vueI18n: './i18n.config.ts'
-  }
-})
+    vueI18n: "./i18n.config.ts",
+  },
+});
