@@ -1,6 +1,6 @@
 import { useMotions } from '@vueuse/motion'
 
-const MAX_OFFSET = 28
+const MAX_OFFSET = 12
 const PREFIX = 'parallax-'
 
 export function useParallaxOnScroll() {

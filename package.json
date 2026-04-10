@@ -7,6 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "preview:cf": "wrangler pages dev dist",
+    "deploy": "wrangler pages deploy dist",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -15,13 +17,17 @@
     "@nuxtjs/i18n": "^9.5.1",
     "@sanity/client": "^7.12.2",
     "@vueuse/motion": "^3.0.3",
+    "markdown-it": "^14.1.0",
     "nuxt": "^4.4.2",
+    "shiki": "^4.0.2",
     "vue": "^3.5.31",
     "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.5",
+    "@types/markdown-it": "^14.1.2",
     "daisyui": "^5.3.7",
-    "tailwindcss": "^4.1.5"
+    "tailwindcss": "^4.1.5",
+    "wrangler": "^3.90.0"
   }
 }

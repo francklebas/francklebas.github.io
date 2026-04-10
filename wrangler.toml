@@ -1,0 +1,16 @@
+name = "francklebas-site"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# Workers AI binding for on-the-fly translation of dev.to articles
+# (server/utils/translate-markdown.ts uses env.AI.run('@cf/meta/m2m100-1.2b', ...))
+[ai]
+binding = "AI"
+
+# KV namespace for caching translated articles and blog list
+# Create with: wrangler kv:namespace create BLOG_KV
+# Then paste the returned id below.
+[[kv_namespaces]]
+binding = "BLOG_KV"
+id = "eacb6d83a22f44d49571584e7a5bd73a"

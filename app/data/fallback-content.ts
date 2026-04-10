@@ -218,9 +218,9 @@ export const fallbackContent: SiteContent = {
       sv: 'För arkitekturuppdrag eller seniora frontend-roller, boka ett samtal eller skicka ett e-postmeddelande.'
     },
     mailtoSubject: {
-      en: 'Project inquiry from francklebas.github.io',
-      fr: 'Prise de contact depuis francklebas.github.io',
-      sv: 'Projektforfragan fran francklebas.github.io'
+      en: 'Project inquiry from francklebas.com',
+      fr: 'Prise de contact depuis francklebas.com',
+      sv: 'Projektforfragan fran francklebas.com'
     },
     mailtoBody: {
       en: 'Hi Franck,%0D%0A%0D%0AName:%0D%0ACompany:%0D%0AContext:%0D%0ATimeline:%0D%0A%0D%0ABest regards,',

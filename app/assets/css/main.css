@@ -153,9 +153,13 @@ a {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.15;
   margin: 0;
+  font-weight: 600;
 }
 
 h1 {
@@ -236,7 +240,7 @@ h2 {
 }
 
 .section {
-  margin-top: 1.15rem;
+  margin-top: 4rem;
 }
 
 .section-head {
@@ -396,6 +400,116 @@ h2 {
 .reveal-init.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.prose-blog {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-base-content);
+}
+
+.prose-blog h1,
+.prose-blog h2,
+.prose-blog h3,
+.prose-blog h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-blog h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.prose-blog h3 {
+  font-size: 1.2rem;
+}
+
+.prose-blog p {
+  margin: 0 0 1rem;
+}
+
+.prose-blog a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin: 0 0 1rem 1.25rem;
+  padding-left: 0.75rem;
+}
+
+.prose-blog li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-blog blockquote {
+  border-left: 3px solid color-mix(in oklab, var(--color-primary) 60%, transparent);
+  padding: 0.4rem 1rem;
+  margin: 1rem 0;
+  color: color-mix(in oklab, var(--color-base-content) 75%, transparent);
+  background: color-mix(in oklab, var(--color-base-200) 60%, transparent);
+  border-radius: 0 var(--radius-box) var(--radius-box) 0;
+}
+
+.prose-blog code {
+  font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", monospace;
+  font-size: 0.88em;
+  background: color-mix(in oklab, var(--color-base-200) 80%, transparent);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.prose-blog pre {
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+  padding: 1rem;
+  border-radius: var(--radius-box);
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.prose-blog pre:not(.shiki) {
+  background: color-mix(in oklab, var(--color-base-300) 90%, transparent);
+}
+
+.prose-blog pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose-blog .shiki {
+  padding: 1rem;
+}
+
+.prose-blog img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-box);
+  margin: 1.25rem 0;
+}
+
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+
+.prose-blog th,
+.prose-blog td {
+  border: 1px solid color-mix(in oklab, var(--color-base-content) 15%, transparent);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.prose-blog th {
+  background: color-mix(in oklab, var(--color-base-200) 70%, transparent);
+  font-weight: 600;
 }
 
 .site-footer {

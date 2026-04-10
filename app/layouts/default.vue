@@ -9,6 +9,7 @@ const navItems = computed(() => [
   { to: localePath('/'), label: t('nav.home') },
   { to: localePath('/about'), label: t('nav.about') },
   { to: localePath('/projects'), label: t('nav.projects') },
+  { to: localePath('/blog'), label: t('nav.blog') },
   { to: localePath('/contact'), label: t('nav.contact') }
 ])
 

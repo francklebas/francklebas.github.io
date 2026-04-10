@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { fallbackContent } from "~/data/fallback-content";
+import { useIntersectionObserver } from "@vueuse/core";
 
 useParallaxOnScroll();
+
+const metricsSection = ref<HTMLElement | null>(null);
+const animatedProgress = ref<number[]>([]);
 
 const { locale, t } = useI18n();
 const localePath = useLocalePath();
@@ -13,6 +17,40 @@ const content = computed(() => data.value || fallbackContent);
 
 onMounted(() => {
   initRevealOnScroll();
+
+  animatedProgress.value = metrics.value.map(() => 0);
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  const runMetricsAnimation = () => {
+    const targets = metrics.value.map((m) => m.progress);
+    if (reduceMotion) {
+      animatedProgress.value = targets;
+      return;
+    }
+    const duration = 1200;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      animatedProgress.value = targets.map((v) => v * eased);
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const { stop } = useIntersectionObserver(
+    metricsSection,
+    ([entry]) => {
+      if (entry?.isIntersecting) {
+        setTimeout(runMetricsAnimation, 350);
+        stop();
+      }
+    },
+    { threshold: 0.3 },
+  );
 });
 
 const featuredProjects = computed(() => content.value.projects.slice(0, 3));
@@ -170,6 +208,7 @@ useSeoMeta({
     </div>
 
     <div
+      ref="metricsSection"
       class="section"
       v-motion="'parallax-metrics'"
       :initial="{ opacity: 0 }"
@@ -178,14 +217,14 @@ useSeoMeta({
       <h2>{{ content.home.metricsTitle[locale as "en" | "fr" | "sv"] }}</h2>
       <div class="grid cols-2">
         <article
-          v-for="metric in metrics"
+          v-for="(metric, index) in metrics"
           :key="metric.value + metric.label.en"
           class="card bg-base-100 border border-base-content/15 hover-lift"
         >
           <div class="card-body p-5 metric-card">
             <div
               class="radial-progress text-primary"
-              :style="`--value:${metric.progress};--size:4.8rem;--thickness:6px;`"
+              :style="`--value:${animatedProgress[index] ?? 0};--size:4.8rem;--thickness:6px;`"
               role="progressbar"
               :aria-valuenow="metric.progress"
               aria-valuemin="0"

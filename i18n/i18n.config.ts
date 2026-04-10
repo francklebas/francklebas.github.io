@@ -2,7 +2,7 @@ export default {
   legacy: false,
   messages: {
     en: {
-      nav: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact' },
+      nav: { home: 'Home', about: 'About', projects: 'Projects', blog: 'Blog', contact: 'Contact' },
       ui: {
         availableNow: 'Available now',
         viewSource: 'Source',
@@ -19,11 +19,21 @@ export default {
         architectLabel: 'Frontend Architect',
         callLabel: 'Call',
         emailLabel: 'Email',
-        viewAllProjects: 'View all projects'
+        viewAllProjects: 'View all projects',
+        blogTitle: 'Notes & writings',
+        blogIntro: 'Articles I publish on dev.to, mirrored here for convenience.',
+        readArticle: 'Read article',
+        publishedOn: 'Published on',
+        minRead: 'min read',
+        viewOnDevto: 'View on dev.to',
+        backToBlog: 'Back to all articles',
+        translatedNotice: 'This article is automatically translated from English.',
+        loadingArticles: 'Loading articles…',
+        noArticles: 'No articles published yet.'
       }
     },
     fr: {
-      nav: { home: 'Accueil', about: 'À propos', projects: 'Projets', contact: 'Contact' },
+      nav: { home: 'Accueil', about: 'À propos', projects: 'Projets', blog: 'Blog', contact: 'Contact' },
       ui: {
         availableNow: 'Disponible immédiatement',
         viewSource: 'Code source',
@@ -40,11 +50,21 @@ export default {
         architectLabel: 'Frontend Architect',
         callLabel: 'Appel',
         emailLabel: 'Email',
-        viewAllProjects: 'Voir tous les projets'
+        viewAllProjects: 'Voir tous les projets',
+        blogTitle: 'Notes & écrits',
+        blogIntro: 'Articles que je publie sur dev.to, automatiquement traduits et reproduits ici.',
+        readArticle: 'Lire l\'article',
+        publishedOn: 'Publié le',
+        minRead: 'min de lecture',
+        viewOnDevto: 'Voir sur dev.to',
+        backToBlog: 'Retour aux articles',
+        translatedNotice: 'Cet article est traduit automatiquement depuis l\'anglais.',
+        loadingArticles: 'Chargement des articles…',
+        noArticles: 'Aucun article publié pour le moment.'
       }
     },
     sv: {
-      nav: { home: 'Hem', about: 'Om', projects: 'Projekt', contact: 'Kontakt' },
+      nav: { home: 'Hem', about: 'Om', projects: 'Projekt', blog: 'Blogg', contact: 'Kontakt' },
       ui: {
         availableNow: 'Tillganglig nu',
         viewSource: 'Kallkod',
@@ -61,7 +81,17 @@ export default {
         architectLabel: 'Frontend Architect',
         callLabel: 'Ring',
         emailLabel: 'E-post',
-        viewAllProjects: 'Se alla projekt'
+        viewAllProjects: 'Se alla projekt',
+        blogTitle: 'Anteckningar & texter',
+        blogIntro: 'Artiklar jag publicerar på dev.to, automatiskt översatta och speglade här.',
+        readArticle: 'Läs artikel',
+        publishedOn: 'Publicerad',
+        minRead: 'min läsning',
+        viewOnDevto: 'Visa på dev.to',
+        backToBlog: 'Tillbaka till artiklar',
+        translatedNotice: 'Den här artikeln är automatiskt översatt från engelska.',
+        loadingArticles: 'Laddar artiklar…',
+        noArticles: 'Inga artiklar publicerade ännu.'
       }
     }
   }

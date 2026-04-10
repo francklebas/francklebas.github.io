@@ -26,6 +26,9 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
+    "/blog/**": { prerender: false },
+    "/fr/blog/**": { prerender: false },
+    "/sv/blog/**": { prerender: false },
     "/**": {
       headers: {
         "Content-Security-Policy":
@@ -40,6 +43,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     sanityReadToken: process.env.SANITY_READ_TOKEN,
+    devtoUsername: process.env.NUXT_DEVTO_USERNAME || "",
+    blogRevalidateSecret: process.env.BLOG_REVALIDATE_SECRET || "",
     public: {
       calendlyUrl: process.env.NUXT_PUBLIC_CALENDLY_URL || "",
       sanity: {
@@ -66,13 +71,14 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
+    preset: "cloudflare-pages",
     prerender: {
       crawlLinks: true,
       routes: ["/", "/about", "/contact", "/projects"],
     },
   },
   i18n: {
-    baseUrl: "https://francklebas.github.io",
+    baseUrl: "https://francklebas.com",
     locales: [
       { code: "en", language: "en-US", name: "English" },
       { code: "fr", language: "fr-FR", name: "Francais" },
