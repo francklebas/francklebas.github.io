@@ -29,7 +29,9 @@ export default {
         backToBlog: 'Back to all articles',
         translatedNotice: 'This article is automatically translated from English.',
         loadingArticles: 'Loading articles…',
-        noArticles: 'No articles published yet.'
+        noArticles: 'No articles published yet.',
+        switchToDark: 'Switch to dark mode',
+        switchToLight: 'Switch to light mode'
       }
     },
     fr: {
@@ -60,7 +62,9 @@ export default {
         backToBlog: 'Retour aux articles',
         translatedNotice: 'Cet article est traduit automatiquement depuis l\'anglais.',
         loadingArticles: 'Chargement des articles…',
-        noArticles: 'Aucun article publié pour le moment.'
+        noArticles: 'Aucun article publié pour le moment.',
+        switchToDark: 'Passer en mode sombre',
+        switchToLight: 'Passer en mode clair'
       }
     },
     sv: {
@@ -91,7 +95,9 @@ export default {
         backToBlog: 'Tillbaka till artiklar',
         translatedNotice: 'Den här artikeln är automatiskt översatt från engelska.',
         loadingArticles: 'Laddar artiklar…',
-        noArticles: 'Inga artiklar publicerade ännu.'
+        noArticles: 'Inga artiklar publicerade ännu.',
+        switchToDark: 'Byt till mörkt läge',
+        switchToLight: 'Byt till ljust läge'
       }
     }
   }

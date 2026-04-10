@@ -23,6 +23,12 @@ export default defineNuxtConfig({
             "Frontend Architect with 17 years of experience in Vue, React, TypeScript, and high-traffic product engineering.",
         },
       ],
+      script: [
+        {
+          innerHTML: `(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}})()`,
+          type: "text/javascript",
+        },
+      ],
     },
   },
   routeRules: {
