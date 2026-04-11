@@ -104,6 +104,38 @@ a {
   color: inherit;
 }
 
+/* Focus indicators for keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-selector);
+}
+
+/* Override for elements that need different focus styles */
+.card:focus-visible,
+.site-header-inner:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Ensure buttons have visible focus */
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 20%, transparent);
+}
+
+/* Links focus styles */
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+/* Remove default focus outline but keep visible focus */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .site-shell::before {
   content: "";
   position: fixed;
