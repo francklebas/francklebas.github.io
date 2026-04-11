@@ -27,8 +27,9 @@ test.describe('Keyboard navigation', () => {
     await page.goto('/')
     await page.keyboard.press('Tab')
     
-    const skipLink = page.getByRole('link', { name: /aller au contenu|skip to content/i })
+    const skipLink = page.locator('a[href="#main-content"]')
     await expect(skipLink).toBeFocused()
+    await expect(skipLink).toBeVisible()
   })
 
   test('Focus indicators should be visible', async ({ page }) => {
