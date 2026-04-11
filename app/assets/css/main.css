@@ -461,8 +461,8 @@ h2 {
   padding-right: 0;
 }
 
-/* Dark mode: ensure ghost button text is black for contrast */
-[data-theme="dark"] .section-head .btn-ghost {
+/* Dark mode: ensure primary button text is black for contrast */
+[data-theme="dark"] .hero-actions .btn-primary {
   color: rgb(0, 0, 0);
 }
 
