@@ -456,6 +456,11 @@ h2 {
   box-shadow: 0 10px 20px -16px currentColor;
 }
 
+.badge-ghost.w-fit {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .radial-progress {
   background: radial-gradient(circle, color-mix(in oklab, var(--color-base-200) 90%, transparent) 58%, transparent 60%);
 }
