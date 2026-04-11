@@ -16,6 +16,7 @@ const i18nHead = useLocaleHead({
       </template>
     </Head>
     <Body>
+      <SkipLink />
       <NuxtLayout>
         <NuxtRouteAnnouncer />
         <NuxtPage />
