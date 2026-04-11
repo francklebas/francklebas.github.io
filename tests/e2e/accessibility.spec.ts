@@ -48,8 +48,7 @@ test.describe('Keyboard navigation', () => {
       }
     })
     
-    const hasVisibleOutline = styles.outline !== 'none' || 
-                              styles.outline !== '0px' ||
+    const hasVisibleOutline = (styles.outline !== 'none' && styles.outline !== '0px') || 
                               styles.boxShadow !== 'none'
     expect(hasVisibleOutline).toBe(true)
   })
