@@ -43,13 +43,16 @@ test.describe('Keyboard navigation', () => {
       const computed = window.getComputedStyle(el)
       return {
         outline: computed.outline,
+        outlineWidth: computed.outlineWidth,
+        outlineStyle: computed.outlineStyle,
         outlineOffset: computed.outlineOffset,
         boxShadow: computed.boxShadow,
       }
     })
     
-    const hasVisibleOutline = (styles.outline !== 'none' && styles.outline !== '0px') || 
-                              styles.boxShadow !== 'none'
+    const hasVisibleOutline = 
+      (styles.outlineWidth !== '0px' && styles.outlineStyle !== 'none') ||
+      styles.boxShadow !== 'none'
     expect(hasVisibleOutline).toBe(true)
   })
 })
