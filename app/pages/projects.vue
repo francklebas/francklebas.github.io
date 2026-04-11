@@ -40,29 +40,32 @@ useSeoMeta({
             height="630"
           />
         </figure>
-        <div class="card-body p-5">
-          <h2 class="text-secondary">{{ project.name }}</h2>
-          <p v-if="project.role" class="badge badge-ghost badge-sm w-fit">{{ project.role[locale as 'en' | 'fr' | 'sv'] }}</p>
-          <p>{{ project.useCase[locale as 'en' | 'fr' | 'sv'] }}</p>
-          <p class="muted">{{ project.impact[locale as 'en' | 'fr' | 'sv'] }}</p>
-
-          <div class="flex flex-wrap gap-2 my-2">
-            <span v-for="tech in project.stack" :key="tech" class="badge badge-outline project-tag">{{ tech }}</span>
+        <div class="card-body p-5 flex flex-col gap-4">
+          <div class="flex-1 space-y-3">
+            <h2 class="text-secondary">{{ project.name }}</h2>
+            <p v-if="project.role" class="badge badge-ghost badge-sm w-fit">{{ project.role[locale as 'en' | 'fr' | 'sv'] }}</p>
+            <p>{{ project.useCase[locale as 'en' | 'fr' | 'sv'] }}</p>
+            <p class="muted">{{ project.impact[locale as 'en' | 'fr' | 'sv'] }}</p>
           </div>
 
-          <div class="card-actions justify-end">
-            <a
-              v-if="project.demoUrl"
-              class="btn btn-secondary btn-soft btn-sm"
-              :href="project.demoUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
-            <a class="btn btn-outline btn-primary btn-sm" :href="project.repoUrl" target="_blank" rel="noopener noreferrer">
-              {{ t('ui.openGithub') }}
-            </a>
+          <div class="space-y-3 pt-3 border-t border-base-content/10">
+            <div class="flex flex-wrap gap-2">
+              <span v-for="tech in project.stack" :key="tech" class="badge badge-outline project-tag">{{ tech }}</span>
+            </div>
+            <div class="card-actions justify-end">
+              <a
+                v-if="project.demoUrl"
+                class="btn btn-secondary btn-soft btn-sm"
+                :href="project.demoUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+              <a class="btn btn-outline btn-primary btn-sm" :href="project.repoUrl" target="_blank" rel="noopener noreferrer">
+                {{ t('ui.openGithub') }}
+              </a>
+            </div>
           </div>
         </div>
       </article>
