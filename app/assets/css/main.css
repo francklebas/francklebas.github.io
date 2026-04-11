@@ -18,7 +18,7 @@
   --color-base-content: oklch(21% 0.006 285.885);
   --color-primary: oklch(84% 0.238 128.85);
   --color-primary-content: oklch(38% 0.063 188.416);
-  --color-secondary: oklch(65% 0.241 354.308);
+  --color-secondary: oklch(55% 0.241 354.308);
   --color-secondary-content: oklch(94% 0.028 342.258);
   --color-accent: oklch(84% 0.238 128.85);
   --color-accent-content: oklch(38% 0.063 188.416);
@@ -53,7 +53,7 @@
   --color-base-content: oklch(90% 0.004 286.32);
   --color-primary: oklch(84% 0.238 128.85);
   --color-primary-content: oklch(38% 0.063 188.416);
-  --color-secondary: oklch(65% 0.241 354.308);
+  --color-secondary: oklch(55% 0.241 354.308);
   --color-secondary-content: oklch(94% 0.028 342.258);
   --color-accent: oklch(84% 0.238 128.85);
   --color-accent-content: oklch(38% 0.063 188.416);
@@ -244,7 +244,7 @@ h2 {
 .lead {
   font-family: "Source Serif 4", Georgia, serif;
   font-size: clamp(1.05rem, 2.6vw, 1.25rem);
-  color: color-mix(in oklab, var(--color-base-content) 78%, transparent);
+  color: color-mix(in oklab, var(--color-base-content) 85%, transparent);
   margin: 0.95rem 0 1.15rem;
   max-width: 58ch;
 }
@@ -319,7 +319,7 @@ h2 {
 }
 
 .muted {
-  color: color-mix(in oklab, var(--color-base-content) 58%, transparent);
+  color: color-mix(in oklab, var(--color-base-content) 72%, transparent);
 }
 
 .approach-list {
@@ -590,7 +590,7 @@ h2 {
   max-width: 1120px;
   margin: 0 auto;
   padding: 1.1rem 1.2rem;
-  color: color-mix(in oklab, var(--color-base-content) 56%, transparent);
+  color: color-mix(in oklab, var(--color-base-content) 72%, transparent);
   font-size: 0.82rem;
   text-align: center;
 }
