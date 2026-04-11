@@ -31,7 +31,8 @@ export default {
         loadingArticles: 'Loading articles…',
         noArticles: 'No articles published yet.',
         switchToDark: 'Switch to dark mode',
-        switchToLight: 'Switch to light mode'
+        switchToLight: 'Switch to light mode',
+        skipToContent: 'Skip to main content'
       }
     },
     fr: {
@@ -64,7 +65,8 @@ export default {
         loadingArticles: 'Chargement des articles…',
         noArticles: 'Aucun article publié pour le moment.',
         switchToDark: 'Passer en mode sombre',
-        switchToLight: 'Passer en mode clair'
+        switchToLight: 'Passer en mode clair',
+        skipToContent: 'Aller au contenu principal'
       }
     },
     sv: {
@@ -97,7 +99,8 @@ export default {
         loadingArticles: 'Laddar artiklar…',
         noArticles: 'Inga artiklar publicerade ännu.',
         switchToDark: 'Byt till mörkt läge',
-        switchToLight: 'Byt till ljust läge'
+        switchToLight: 'Byt till ljust läge',
+        skipToContent: 'Hoppa till huvudinnehåll'
       }
     }
   }

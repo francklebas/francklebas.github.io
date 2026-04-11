@@ -106,7 +106,7 @@ const languageLinks = computed(() => [
       </div>
     </header>
 
-    <main class="site-main flex-1">
+    <main id="main-content" class="site-main flex-1">
       <div class="site-main-inner">
         <slot />
       </div>
