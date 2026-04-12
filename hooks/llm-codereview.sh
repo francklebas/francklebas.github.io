@@ -5,8 +5,9 @@
 PROVIDER="gemini"
 MODEL="gemini-2.5-flash-lite"
 
-CONTEXT_FILE="CODEBASE_CONTEXT.md"
-GUIDELINES_FILE="CODE_REVIEW_GUIDELINES.md"
+PROMPTS_DIR="${LLM_PROMPTS_DIR:-$HOME/workspace/llm-prompts}"
+CONTEXT_FILE="$PROMPTS_DIR/codereview-context.md"
+GUIDELINES_FILE="$PROMPTS_DIR/codereview-guidelines.md"
 
 # --- Fichiers passés par pre-commit ---
 if [ $# -eq 0 ]; then
