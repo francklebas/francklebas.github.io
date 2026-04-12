@@ -414,6 +414,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.card-body h3.text-secondary {
+  color: oklch(0.84 0.23 129.83);
+}
+
 .navbar {
   min-height: 4rem;
   background: color-mix(in oklab, var(--color-base-200) 84%, transparent);

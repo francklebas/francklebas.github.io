@@ -1,20 +1,22 @@
 #!/bin/bash
 # LLM Code Review Hook
-# Sortie markdown lisible par le dev ET exploitable par le LLM de l'éditeur.
+# Output is markdown, readable by both the developer and the LLM in their editor.
 
 PROVIDER="gemini"
 MODEL="gemini-2.5-flash-lite"
 
+# Resolve project name from git repo root directory
+PROJECT_NAME=$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")
 PROMPTS_DIR="${LLM_PROMPTS_DIR:-$HOME/workspace/llm-prompts}"
-CONTEXT_FILE="$PROMPTS_DIR/codereview-context.md"
-GUIDELINES_FILE="$PROMPTS_DIR/codereview-guidelines.md"
+CONTEXT_FILE="$PROMPTS_DIR/$PROJECT_NAME/codereview-context.md"
+GUIDELINES_FILE="$PROMPTS_DIR/$PROJECT_NAME/codereview-guidelines.md"
 
-# --- Fichiers passés par pre-commit ---
+# --- Files passed by pre-commit ---
 if [ $# -eq 0 ]; then
     exit 0
 fi
 
-# --- Diff staged uniquement ---
+# --- Staged diff only ---
 DIFF=$(git diff --cached --no-color -- "$@" 2>/dev/null)
 
 if [ -z "$DIFF" ]; then
@@ -23,54 +25,54 @@ fi
 
 DIFF_TRUNCATED=$(echo "$DIFF" | head -c 12000)
 
-# --- Contexte et guidelines (composants du prompt) ---
-CONTEXT=$( [ -f "$CONTEXT_FILE" ] && head -c 4000 "$CONTEXT_FILE" || echo "Pas de contexte disponible.")
-GUIDELINES=$( [ -f "$GUIDELINES_FILE" ] && head -c 2500 "$GUIDELINES_FILE" || echo "Pas de guidelines disponibles.")
+# --- Context and guidelines (prompt components) ---
+CONTEXT=$( [ -f "$CONTEXT_FILE" ] && head -c 4000 "$CONTEXT_FILE" || echo "No project context found.")
+GUIDELINES=$( [ -f "$GUIDELINES_FILE" ] && head -c 2500 "$GUIDELINES_FILE" || echo "No review guidelines found.")
 
 # --- Prompt ---
 PROMPT=$(cat <<PROMPT_END
-Tu es un code reviewer technique senior. Analyse le diff ci-dessous.
+You are a senior technical code reviewer. Analyze the diff below.
 
-RÈGLES :
-- Signale uniquement les problèmes concrets qui nécessitent une correction
-- Pour chaque problème : fichier, ligne, description, diff correctif
-- Pas de résumé, pas de compliment, pas de prose
-- Si rien à signaler : réponds uniquement "RAS"
-- Catégories par sévérité décroissante : security > bug > a11y > i18n > perf > style
+RULES:
+- Only flag concrete issues that require a fix
+- For each issue: file, line number, description, corrective diff
+- No summary, no compliments, no filler
+- If nothing to report, respond only: "LGTM"
+- Severity order: security > bug > a11y > i18n > perf > style
 
-FORMAT DE SORTIE (strict) :
+OUTPUT FORMAT (strict):
 
-## fichier.ext
+## file.ext
 
-**[catégorie]** Description du problème (ligne N)
+**[category]** Issue description (line N)
 \`\`\`diff
-- code actuel
-+ code corrigé
+- current code
++ proposed fix
 \`\`\`
 
-Si rien à signaler, réponds uniquement : RAS
+If nothing to report, respond only: LGTM
 
---- CONTEXTE PROJET ---
+--- PROJECT CONTEXT ---
 $CONTEXT
 
---- GUIDELINES DE REVIEW ---
+--- REVIEW GUIDELINES ---
 $GUIDELINES
 
---- DIFF À ANALYSER ---
+--- DIFF TO ANALYZE ---
 $DIFF_TRUNCATED
 PROMPT_END
 )
 
-# --- Appel LLM ---
+# --- LLM call ---
 REVIEW=$(gemini --model "$MODEL" -p "$PROMPT" 2>&1)
 
 if [ $? -ne 0 ]; then
-    echo "[llm-codereview] review indisponible ($PROVIDER)"
+    echo "[llm-codereview] review unavailable ($PROVIDER)"
     exit 0
 fi
 
 echo ""
-echo "[llm-codereview] $PROVIDER/$MODEL | fichiers: $*"
+echo "[llm-codereview] $PROVIDER/$MODEL | files: $*"
 echo ""
 echo "$REVIEW"
 
