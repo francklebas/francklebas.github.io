@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/i18n", "@vueuse/motion/nuxt"],
+  modules: ["@nuxtjs/sitemap", "@nuxtjs/i18n", "@vueuse/motion/nuxt"],
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
@@ -103,5 +103,8 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
     vueI18n: "./i18n.config.ts",
+  },
+  site: {
+    url: "https://francklebas.com",
   },
 });
