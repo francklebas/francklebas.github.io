@@ -107,4 +107,7 @@ export default defineNuxtConfig({
   site: {
     url: "https://francklebas.com",
   },
+  sitemap: {
+    sources: ["/api/__sitemap__/urls"],
+  },
 });

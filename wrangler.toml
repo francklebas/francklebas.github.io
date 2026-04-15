@@ -1,6 +1,6 @@
 name = "francklebas-site"
-compatibility_date = "2025-01-01"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat_v2"]
 pages_build_output_dir = "dist"
 
 # Workers AI binding for on-the-fly translation of dev.to articles
