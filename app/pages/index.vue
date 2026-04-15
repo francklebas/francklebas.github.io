@@ -128,7 +128,7 @@ useSeoMeta({
         </div>
       </div>
 
-      <aside
+      <div
         class="profile-card card bg-base-100 border border-base-content/15 reveal-init"
         style="--reveal-delay: 120ms"
       >
@@ -149,7 +149,7 @@ useSeoMeta({
             >Vue · React · TypeScript</span
           >
         </div>
-      </aside>
+      </div>
     </div>
 
     <div

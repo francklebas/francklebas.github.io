@@ -45,7 +45,7 @@
 @plugin "daisyui/theme" {
   name: "dark";
   default: false;
-  prefersdark: true;
+  prefersdark: false;
   color-scheme: "dark";
   --color-base-100: oklch(16% 0.006 285.885);
   --color-base-200: oklch(20% 0.006 285.885);
@@ -415,7 +415,7 @@ h2 {
 }
 
 .card-body h3.text-secondary {
-  color: oklch(0.84 0.23 129.83);
+  color: var(--color-secondary);
 }
 
 .navbar {
@@ -463,6 +463,10 @@ h2 {
 .badge-ghost.w-fit {
   padding-left: 0;
   padding-right: 0;
+}
+
+.badge-success.badge-soft {
+  color: var(--color-success-content);
 }
 
 /* Dark mode: ensure primary button text has sufficient contrast */
