@@ -144,7 +144,7 @@ useSeoMeta({
           />
           <p class="font-semibold">Franck Lebas</p>
           <p class="muted text-sm">{{ t("ui.architectLabel") }}</p>
-          <p class="muted text-sm">Stockholm · 17 years</p>
+          <p class="muted text-sm">{{ t("ui.locationSince") }}</p>
           <span class="badge badge-outline badge-sm profile-stack"
             >Vue · React · TypeScript</span
           >
