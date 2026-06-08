@@ -83,7 +83,9 @@ onMounted(() => {
             />
           </figure>
           <div class="card-body p-5">
-            <h2 class="text-secondary">{{ article.title }}</h2>
+            <NuxtLink :to="localePath(`/blog/${article.slug}`)" class="text-secondary hover:underline">
+              <h2>{{ article.title }}</h2>
+            </NuxtLink>
             <p class="muted text-sm">
               {{ t("ui.publishedOn") }}
               {{ dateFormatter.format(new Date(article.published_at)) }}

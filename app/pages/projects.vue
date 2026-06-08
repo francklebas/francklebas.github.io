@@ -42,7 +42,9 @@ useSeoMeta({
         </figure>
         <div class="card-body p-5 flex flex-col gap-4">
           <div class="flex-1 space-y-3">
-            <h2 class="text-secondary">{{ project.name }}</h2>
+            <a :href="project.repoUrl" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">
+              <h2>{{ project.name }}</h2>
+            </a>
             <p v-if="project.role" class="badge badge-ghost badge-sm w-fit">{{ project.role[locale as 'en' | 'fr' | 'sv'] }}</p>
             <p>{{ project.useCase[locale as 'en' | 'fr' | 'sv'] }}</p>
             <p class="muted">{{ project.impact[locale as 'en' | 'fr' | 'sv'] }}</p>
