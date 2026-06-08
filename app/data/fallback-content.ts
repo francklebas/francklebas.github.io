@@ -229,7 +229,7 @@ export const fallbackContent: SiteContent = {
     },
     calendly: 'https://calendly.com/francklebas-ik/30min',
     email: 'francklebas@ik.me',
-    phone: '+46 (0)735 103 291',
+    phone: '+33 7 45 65 51 08',
     linkedin: 'https://linkedin.com/in/francklebas',
     github: 'https://github.com/francklebas'
   },
